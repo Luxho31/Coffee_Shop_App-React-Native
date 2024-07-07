@@ -1,79 +1,98 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# Coffee_Shop_App
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Este proyecto es una aplicación móvil desarrollada con React Native. Este README detalla los pasos necesarios para configurar y ejecutar la aplicación en un entorno de desarrollo local.
 
-## Step 1: Start the Metro Server
+## Requisitos Previos
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- Node.js y npm instalados
+- Android Studio instalado y configurado
+- Un dispositivo Android o un emulador de Android configurado
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Instalación de Node.js y npm
 
-```bash
-# using npm
-npm start
+1. Descarga e instala Node.js desde [nodejs.org](https://nodejs.org/).
+2. Verifica la instalación ejecutando:
+   ```bash
+   node -v
+   npm -v
+   ```
 
-# OR using Yarn
-yarn start
-```
+## Instalación de Android Studio
 
-## Step 2: Start your Application
+1. Descarga e instala Android Studio desde [developer.android.com/studio](https://developer.android.com/studio).
+2. Durante la instalación, asegúrate de que las siguientes opciones estén seleccionadas:
+   - Android SDK
+   - Android SDK Platform
+   - Android Virtual Device
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+3. Configura las variables de entorno necesarias:
 
-### For Android
+   - **ANDROID_HOME**: Debe apuntar al directorio donde está instalado el SDK de Android. Por ejemplo:
+     ```bash
+     C:\Users\<tu_usuario>\AppData\Local\Android\Sdk
+     ```
 
-```bash
-# using npm
-npm run android
+   - Añade las siguientes rutas a la variable de entorno `PATH`:
+     ```bash
+     %ANDROID_HOME%\platform-tools
+     %ANDROID_HOME%\tools
+     ```
 
-# OR using Yarn
-yarn android
-```
+## Crear un Nuevo Proyecto React Native
 
-### For iOS
+1. Navega a la carpeta donde deseas crear tu proyecto y ejecuta:
+   ```bash
+   npx react-native init Coffee_Shop_App
+   cd Coffee_Shop_App
+   ```
 
-```bash
-# using npm
-npm run ios
+## Preparar el Proyecto
 
-# OR using Yarn
-yarn ios
-```
+1. Mueve el proyecto fuera de cualquier carpeta sincronizada con OneDrive para evitar problemas de permisos. Por ejemplo, mueve el proyecto a `C:\Projects\Coffee_Shop_App`.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+2. Navega al nuevo directorio del proyecto:
+   ```bash
+   cd C:\Projects\Coffee_Shop_App
+   ```
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+3. Limpia el caché de Gradle:
+   ```bash
+   cd android
+   ./gradlew clean
+   cd ..
+   ```
 
-## Step 3: Modifying your App
+## Iniciar el Servidor de Desarrollo
 
-Now that you have successfully run the app, let's modify it.
+1. En una terminal, navega al directorio raíz del proyecto y ejecuta:
+   ```bash
+   npm run start
+   ```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Ejecutar la Aplicación en un Emulador o Dispositivo Android
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+1. Asegúrate de que el emulador de Android esté en ejecución o que tu dispositivo Android esté conectado y reconocido por `adb`:
+   ```bash
+   adb devices
+   ```
 
-## Congratulations! :tada:
+2. En otra terminal, ejecuta:
+   ```bash
+   npx react-native run-android
+   ```
 
-You've successfully run and modified your React Native App. :partying_face:
+## Solución de Problemas
 
-### Now what?
+- Si encuentras problemas durante la compilación, asegúrate de que todas las herramientas estén correctamente instaladas y configuradas.
+- Si el problema persiste, proporciona detalles específicos del error para obtener ayuda adicional.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## Enlaces Útiles
 
-# Troubleshooting
+- [Documentación de React Native](https://reactnative.dev/docs/getting-started)
+- [Documentación de Android Studio](https://developer.android.com/studio)
+- [Solución de Problemas de Gradle](https://gradle.org/help/)
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+---
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Este README proporciona una guía paso a paso para configurar y ejecutar tu proyecto React Native en un entorno de desarrollo local. Asegúrate de seguir cada paso cuidadosamente y de verificar que todas las configuraciones estén correctamente establecidas.
